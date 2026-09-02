@@ -49,19 +49,19 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section reveal-on-scroll">
     <div class="hero-container">
       
       <!-- Left Column: Content -->
       <div class="hero-content">
-        <div class="hero-badge">
+        <div class="hero-badge shiny-pill-sweep">
           <span class="badge-dot"></span>
           <span class="badge-text">HYBRID AI RISK INTELLIGENCE & RAZORPAY TEST CHECKOUT</span>
         </div>
 
         <h1 class="hero-headline">
-          Stop Fraud.<br>
-          <span class="headline-gradient">Protect Every Payment.</span>
+          <span class="stagger-word">Stop</span> <span class="stagger-word">Fraud.</span><br>
+          <span class="headline-gradient stagger-word">Protect</span> <span class="headline-gradient stagger-word">Every</span> <span class="headline-gradient stagger-word">Payment.</span>
         </h1>
 
         <p class="hero-description">
@@ -173,7 +173,7 @@
   </section>
 
   <!-- TRANSACTION RISK ENGINE SECTION -->
-  <section id="risk-engine" class="risk-engine-section">
+  <section id="risk-engine" class="risk-engine-section reveal-on-scroll">
     <div class="risk-engine-container">
       
       <!-- Section Header -->
@@ -325,6 +325,11 @@
             </div>
 
             <div class="idle-visual-container">
+              <svg class="reactive-lines-svg" viewBox="0 0 300 300" preserveAspectRatio="none">
+                <path class="reactive-line line-1" d="M 10 150 Q 150 30 290 150" />
+                <path class="reactive-line line-2" d="M 30 150 Q 150 270 270 150" />
+                <path class="reactive-line line-3" d="M 150 10 Q 270 150 150 290" />
+              </svg>
               <div class="idle-scan-beam"></div>
               <div class="idle-ring idle-ring-1"></div>
               <div class="idle-ring idle-ring-2"></div>
@@ -473,7 +478,7 @@
   </section>
 
   <!-- SECTION 1: RISK OPERATIONS DASHBOARD & TRANSACTIONS HISTORY -->
-  <section id="transactions" class="dashboard-section">
+  <section id="transactions" class="dashboard-section reveal-on-scroll">
     <div class="dashboard-container">
       
       <div class="section-header">
@@ -657,7 +662,7 @@
   </section>
 
   <!-- SECTION 2: EXPLAINABILITY SECTION -->
-  <section id="explainability" class="explainability-section">
+  <section id="explainability" class="explainability-section reveal-on-scroll">
     <div class="explainability-container">
       
       <div class="section-header">
@@ -666,8 +671,8 @@
           <span class="badge-text">TRANSPARENT AI DECISIONS</span>
         </div>
         <h2 class="section-title">Every Decision, Explained.</h2>
-        <p class="section-subtitle">
-          RiskGuard shows the signals, score contributions, and recommended action behind every payment decision.
+        <p id="explainability-subtitle" class="section-subtitle explain-scroll-words">
+          <span>RiskGuard</span> <span>shows</span> <span>the</span> <span>signals,</span> <span>score</span> <span>contributions,</span> <span>and</span> <span>recommended</span> <span>action</span> <span>behind</span> <span>every</span> <span>payment</span> <span>decision.</span>
         </p>
       </div>
 
@@ -717,7 +722,7 @@
   </section>
 
   <!-- SITE FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer reveal-on-scroll">
     <div class="footer-container">
       <p class="footer-credit">
         <span class="footer-brand">RiskGuard AI</span>

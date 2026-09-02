@@ -839,6 +839,231 @@ html {
 }
 
 /* --------------------------------------------------------------------------
+   ORIGINKIT-INSPIRED PREMIUM INTERACTION STYLES
+   -------------------------------------------------------------------------- */
+
+/* 1. Hero Stagger Text Rise */
+.stagger-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroStaggerRise 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-word:nth-child(1) { animation-delay: 0.1s; }
+.stagger-word:nth-child(2) { animation-delay: 0.18s; }
+.stagger-word:nth-child(3) { animation-delay: 0.26s; }
+.stagger-word:nth-child(4) { animation-delay: 0.34s; }
+.stagger-word:nth-child(5) { animation-delay: 0.42s; }
+
+@keyframes heroStaggerRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Hero Badge Shiny Sweep */
+.hero-badge.shiny-pill-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge.shiny-pill-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(239, 68, 68, 0.22) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.hero-badge.shiny-pill-sweep.swept::after {
+  animation: pillSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pillSweep {
+  0% { left: -100%; opacity: 0; }
+  20% { opacity: 1; }
+  100% { left: 200%; opacity: 0; }
+}
+
+/* 3. Magnetic CTA Buttons */
+.btn-primary-cta,
+.btn-secondary-cta,
+.btn-analyze,
+.btn-pz-checkout,
+.btn-nav-cta {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+.btn-primary-cta:hover,
+.btn-analyze:hover,
+.btn-pz-checkout:hover {
+  box-shadow: 0 4px 20px rgba(179, 18, 23, 0.35);
+}
+
+/* 4. Scroll Section Reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 5. Explainability Scroll Text Highlight */
+.explain-scroll-words span {
+  display: inline-block;
+  color: var(--text-secondary, #8B8B95);
+  transition: color 0.35s ease, transform 0.35s ease;
+  margin-right: 4px;
+}
+
+.explain-scroll-words span.highlighted {
+  color: var(--text-primary, #F1F5F9);
+  font-weight: 500;
+}
+
+/* 6. Reactive SVG Lines in Idle Visual */
+.idle-visual-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.reactive-lines-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.65;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reactive-line {
+  fill: none;
+  stroke: rgba(225, 29, 46, 0.16);
+  stroke-width: 1.5;
+  stroke-dasharray: 6, 6;
+  animation: dashDrift 20s linear infinite;
+}
+
+.reactive-line.line-2 { stroke: rgba(179, 18, 23, 0.22); stroke-dasharray: 4, 8; animation-duration: 25s; }
+.reactive-line.line-3 { stroke: rgba(255, 255, 255, 0.06); stroke-dasharray: 8, 4; animation-duration: 30s; }
+
+@keyframes dashDrift {
+  to { stroke-dashoffset: -200; }
+}
+
+/* 7. KPI Card Stagger & Micro-Hover */
+.kpi-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kpi-card.stagger-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 8. Table Row Accent Bar */
+.data-table tbody tr {
+  transition: background-color 0.2s ease, border-left-color 0.2s ease;
+  border-left: 2px solid transparent;
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(26, 3, 3, 0.6);
+  border-left-color: var(--accent-red-bright, #EF4444);
+}
+
+/* 9. Audit Trail Sequential Steps */
+.audit-step {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.audit-step.step-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 10. Navbar Stagger & Active Link Indicator */
+.navbar-wrapper {
+  animation: navFadeDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes navFadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-crimson);
+  border-radius: 2px;
+  animation: linkLineIn 0.3s ease forwards;
+}
+
+@keyframes linkLineIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* 11. Accessibility Support (prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .stagger-word,
+  .reveal-on-scroll,
+  .kpi-card,
+  .audit-step,
+  .btn-primary-cta,
+  .btn-secondary-cta,
+  .btn-analyze,
+  .btn-pz-checkout,
+  .navbar-wrapper {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .reactive-lines-svg { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE MEDIA QUERIES
    -------------------------------------------------------------------------- */
 @media (max-width: 1180px) {

@@ -1394,6 +1394,15 @@ export function openTransactionModal(txnId) {
   `;
 
   modal.style.display = 'flex';
+
+  // Sequential audit step reveal
+  const auditSteps = modal.querySelectorAll('.audit-step');
+  auditSteps.forEach((step, idx) => {
+    step.classList.remove('step-visible');
+    setTimeout(() => {
+      step.classList.add('step-visible');
+    }, idx * 60);
+  });
 }
 
 export function closeTransactionModal() {
@@ -1466,6 +1475,128 @@ function renderLatestExplanationSection(txns) {
       </div>
     </div>
   `;
+}
+
+// --------------------------------------------------------------------------
+// ORIGINKIT-INSPIRED PREMIUM INTERACTION HANDLERS
+// --------------------------------------------------------------------------
+
+function initOriginkitInteractions() {
+  if (typeof document === 'undefined') return;
+
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+
+  // 1. Scroll Section Reveal & KPI Stagger (IntersectionObserver)
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+
+          // Trigger pill sweep when hero badge enters
+          const pill = entry.target.querySelector('.shiny-pill-sweep') || (entry.target.classList.contains('shiny-pill-sweep') ? entry.target : null);
+          if (pill) pill.classList.add('swept');
+
+          // Stagger KPI Cards inside dashboard section
+          const kpiCards = entry.target.querySelectorAll('.kpi-card');
+          if (kpiCards.length > 0) {
+            kpiCards.forEach((card, idx) => {
+              setTimeout(() => {
+                card.classList.add('stagger-visible');
+              }, idx * 75);
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll, .shiny-pill-sweep').forEach((el) => revealObserver.observe(el));
+  } else {
+    // Fallback if IntersectionObserver not supported
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => el.classList.add('is-visible'));
+    document.querySelectorAll('.kpi-card').forEach((el) => el.classList.add('stagger-visible'));
+  }
+
+  // 2. Magnetic Button Cursor Attraction (Desktop Fine Pointer Only)
+  if (isFinePointer && !isReduced) {
+    const magneticBtns = document.querySelectorAll('.btn-primary-cta, .btn-secondary-cta, .btn-analyze, .btn-pz-checkout, .btn-nav-cta');
+    magneticBtns.forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - (rect.left + rect.width / 2);
+        const y = e.clientY - (rect.top + rect.height / 2);
+        btn.style.transform = `translate3d(${x * 0.12}px, ${y * 0.12}px, 0) scale(1.02)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0) scale(1)';
+      });
+    });
+  }
+
+  // 3. Explainability Word Scroll Highlight
+  const explainSub = document.getElementById('explainability-subtitle');
+  if (explainSub && !isReduced) {
+    const wordSpans = explainSub.querySelectorAll('span');
+    window.addEventListener('scroll', () => {
+      const rect = explainSub.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const progress = Math.min(1, Math.max(0, (windowHeight - rect.top) / (windowHeight + rect.height)));
+        const highlightCount = Math.floor(progress * wordSpans.length);
+        wordSpans.forEach((span, idx) => {
+          if (idx <= highlightCount) {
+            span.classList.add('highlighted');
+          } else {
+            span.classList.remove('highlighted');
+          }
+        });
+      }
+    });
+  }
+
+  // 4. Reactive SVG Lines Parallax (Desktop Only)
+  const readyCard = document.getElementById('risk-ready-card');
+  const svgLines = document.querySelector('.reactive-lines-svg');
+  if (readyCard && svgLines && isFinePointer && !isReduced) {
+    readyCard.addEventListener('mousemove', (e) => {
+      const rect = readyCard.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      svgLines.style.transform = `translate3d(${x * 12}px, ${y * 12}px, 0) rotate(${x * 2}deg)`;
+    });
+
+    readyCard.addEventListener('mouseleave', () => {
+      svgLines.style.transform = 'translate3d(0, 0, 0) rotate(0deg)';
+    });
+  }
+
+  // 5. Scroll Active Nav Link Highlight
+  const sections = document.querySelectorAll('section[id], header');
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (navLinks.length > 0 && sections.length > 0) {
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      sections.forEach((sec) => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          currentSectionId = sec.getAttribute('id') || '';
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+        if ((href === '#' && !currentSectionId) || href === `#${currentSectionId}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -1577,5 +1708,8 @@ if (typeof document !== 'undefined') {
     checkBackendHealth();
     setInterval(checkBackendHealth, 15000);
     updateDashboardAndHistory();
+
+    // Initialize Originkit Interactions
+    initOriginkitInteractions();
   });
 }
