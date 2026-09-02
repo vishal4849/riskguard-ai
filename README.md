@@ -181,3 +181,9 @@ python backend/tests/test_webhook_signature.py
 3. **RAW Body Webhook Verification**: Webhook signatures are calculated directly from raw request bytes to prevent JSON re-serialization hash mismatches.
 4. **Idempotency**: Duplicate webhook event deliveries (`X-Razorpay-Event-Id`) return HTTP 200 without duplicating database records.
 5. **Status Hierarchy**: Protects payment records from out-of-order status downgrades (e.g. `CAPTURED` will not be overwritten by delayed `AUTHORIZED` events).
+
+---
+
+## Author & Project Attribution
+
+**RiskGuard AI** • Developed by **Vishal Jagtap**
