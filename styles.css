@@ -797,6 +797,48 @@ html {
 .modal-actions-row { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
 
 /* --------------------------------------------------------------------------
+   SITE FOOTER (Subtle Developer Credit)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 24px 20px;
+  background: rgba(10, 1, 1, 0.6);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-credit {
+  font-size: 0.82rem;
+  color: var(--text-secondary, #8B8B95);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-brand {
+  color: var(--text-primary, #E2E8F0);
+  font-weight: 600;
+}
+
+.footer-sep {
+  margin: 0 8px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.footer-author {
+  color: #EF4444;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE MEDIA QUERIES
    -------------------------------------------------------------------------- */
 @media (max-width: 1180px) {
