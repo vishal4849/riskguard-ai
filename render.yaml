@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: riskguard-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: RAZORPAY_MODE
+        value: test
+      - key: FRONTEND_URL
+        sync: false
+      - key: PUBLIC_BACKEND_URL
+        sync: false
+      - key: ALLOW_ALL_CORS
+        value: "true"

@@ -1,0 +1,25 @@
+# Environment Files (Secrets MUST NEVER be committed)
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+
+# Dependencies & Build Artifacts
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local Databases & Raw Datasets
+*.db
+backend/data/*.db
+backend/data/synthetic_transactions.csv
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

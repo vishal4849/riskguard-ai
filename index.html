@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RiskGuard AI — AI Risk Manager for Payments</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+
+  <!-- Full Viewport Pure CSS Background (Unchanged) -->
+  <div class="fintech-bg">
+    <div class="fintech-bg-atmosphere"></div>
+    <div class="fintech-bg-perspective">
+      <div class="fintech-bg-grid"></div>
+    </div>
+    <div class="fintech-bg-rays"></div>
+    <div class="fintech-bg-streaks"></div>
+    <div class="fintech-bg-center-shield"></div>
+    <div class="fintech-bg-vignette"></div>
+  </div>
+
+  <!-- Navbar (Icon-Free Clean Brand & Backend Health Indicator) -->
+  <header class="navbar-wrapper">
+    <nav class="navbar-container">
+      <a href="#" class="navbar-brand">
+        <div class="brand-text-container">
+          <span class="brand-name">RiskGuard <span class="brand-accent">AI</span></span>
+          <span class="brand-sub">AI Risk Manager</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active">Overview</a></li>
+        <li><a href="#risk-engine" class="nav-link">Risk Engine</a></li>
+        <li><a href="#transactions" class="nav-link">Transactions</a></li>
+        <li><a href="#explainability" class="nav-link">Explainability</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="status-indicator" title="Hybrid Risk Engine Status">
+          <span class="status-dot"></span>
+          <span class="status-text">AI Engine Online</span>
+        </div>
+        <a href="#risk-engine" class="btn-nav-cta">Analyze Transaction</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Left Column: Content -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">HYBRID AI RISK INTELLIGENCE & RAZORPAY TEST CHECKOUT</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Stop Fraud.<br>
+          <span class="headline-gradient">Protect Every Payment.</span>
+        </h1>
+
+        <p class="hero-description">
+          An explainable AI risk manager combining deterministic rules and machine learning to evaluate payments, detect suspicious behavior, and orchestrate Razorpay Test Checkout in real time.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#risk-engine" class="btn-primary-cta">
+            <span>Analyze a Transaction</span>
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="#risk-engine" class="btn-secondary-cta">
+            Explore Risk Engine
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Hybrid AI Fusion</span>
+          </div>
+          <div class="trust-divider">•</div>
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Razorpay Standard Checkout</span>
+          </div>
+          <div class="trust-divider">•</div>
+          <div class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>HMAC Verification</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Risk Analysis Visual Card -->
+      <div class="hero-visual">
+        <div class="risk-card-wrapper">
+          <div class="risk-card">
+            <div class="card-scanline"></div>
+            
+            <div class="risk-card-header">
+              <div class="header-status">
+                <span class="pulse-dot"></span>
+                <span class="header-title">LIVE HYBRID RISK ASSESSMENT</span>
+              </div>
+              <span class="live-tag">HYBRID AI</span>
+            </div>
+
+            <div class="txn-row">
+              <div class="txn-info">
+                <span class="txn-label">Transaction</span>
+                <span class="txn-amount">₹48,500</span>
+              </div>
+              <div class="merchant-badge">Merchant #9402</div>
+            </div>
+
+            <div class="score-container">
+              <div class="gauge-wrapper">
+                <svg class="score-ring" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="42" stroke-width="8"/>
+                  <circle class="ring-fill" cx="50" cy="50" r="42" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="34"/>
+                </svg>
+                <div class="score-value-box">
+                  <span class="score-number">88</span>
+                  <span class="score-max">/ 100</span>
+                </div>
+              </div>
+
+              <div class="score-details">
+                <span class="score-title">Hybrid Risk Score</span>
+                <div class="risk-badge high-risk">CRITICAL RISK</div>
+              </div>
+            </div>
+
+            <div class="signals-box">
+              <div class="signals-header">Signals Detected:</div>
+              <ul class="signals-list">
+                <li class="signal-item alert">
+                  <span class="signal-bullet">•</span> Device anomaly (Rules + ML)
+                </li>
+                <li class="signal-item alert">
+                  <span class="signal-bullet">•</span> Velocity spike (91% ML prob)
+                </li>
+                <li class="signal-item alert">
+                  <span class="signal-bullet">•</span> Location mismatch
+                </li>
+              </ul>
+            </div>
+
+            <div class="decision-box">
+              <span class="decision-label">AI Decision:</span>
+              <span class="decision-value">STEP-UP VERIFICATION</span>
+            </div>
+
+          </div>
+          <div class="card-glow-backdrop"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRANSACTION RISK ENGINE SECTION -->
+  <section id="risk-engine" class="risk-engine-section">
+    <div class="risk-engine-container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">HYBRID AI RISK ENGINE</span>
+        </div>
+        <h2 class="section-title">AI Transaction Risk Engine</h2>
+        <p class="section-subtitle">
+          Analyze payment behavior, evaluate Scikit-Learn machine learning fraud probability, and generate an explainable risk decision before launching Razorpay Test Checkout.
+        </p>
+
+        <!-- Try Sample Preset Buttons Bar -->
+        <div class="sample-presets-bar">
+          <span class="preset-label">Try a Sample:</span>
+          <button id="sample-low" type="button" class="preset-btn low">Low Risk</button>
+          <button id="sample-medium" type="button" class="preset-btn medium">Medium Risk</button>
+          <button id="sample-high" type="button" class="preset-btn high">High Risk</button>
+        </div>
+      </div>
+
+      <!-- 2-Column Grid Layout (48% Left / 52% Right) -->
+      <div class="risk-engine-grid">
+
+        <!-- LEFT PANEL: TRANSACTION INPUT FORM -->
+        <div class="input-panel">
+          <div class="panel-header">
+            <div class="panel-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="panel-title">Transaction Details</h3>
+              <p class="panel-desc">Enter payment and customer context for hybrid risk analysis.</p>
+            </div>
+          </div>
+
+          <form id="risk-form" onsubmit="return false;" class="form-grid">
+            
+            <div class="form-group col-span-2">
+              <label for="input-amount" class="form-label">Transaction Amount</label>
+              <div class="input-with-prefix">
+                <span class="input-prefix">₹</span>
+                <input type="number" id="input-amount" class="form-input" value="48500" placeholder="e.g. 10000" min="1">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="select-payment-method" class="form-label">Payment Method</label>
+              <select id="select-payment-method" class="form-select">
+                <option value="UPI">UPI</option>
+                <option value="Credit Card" selected>Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Net Banking">Net Banking</option>
+                <option value="Wallet">Wallet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-customer-type" class="form-label">Customer Type</label>
+              <select id="select-customer-type" class="form-select">
+                <option value="Existing Customer">Existing Customer</option>
+                <option value="New Customer" selected>New Customer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-device-status" class="form-label">Device Status</label>
+              <select id="select-device-status" class="form-select">
+                <option value="Trusted Device">Trusted Device</option>
+                <option value="New Device" selected>New Device</option>
+                <option value="Suspicious Device">Suspicious Device</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-velocity" class="form-label">Transaction Velocity</label>
+              <select id="select-velocity" class="form-select">
+                <option value="Normal">Normal</option>
+                <option value="Multiple payments in 10 minutes" selected>Multiple payments in 10 minutes</option>
+                <option value="High-frequency attempts">High-frequency attempts</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-location" class="form-label">Location Behaviour</label>
+              <select id="select-location" class="form-select">
+                <option value="Normal Location">Normal Location</option>
+                <option value="New Location">New Location</option>
+                <option value="Location Mismatch" selected>Location Mismatch</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="select-ip-reputation" class="form-label">IP Reputation</label>
+              <select id="select-ip-reputation" class="form-select">
+                <option value="Trusted">Trusted</option>
+                <option value="Unknown" selected>Unknown</option>
+                <option value="Suspicious">Suspicious</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-chargebacks" class="form-label">Previous Chargebacks</label>
+              <input type="number" id="input-chargebacks" class="form-input" value="1" min="0" max="10">
+            </div>
+
+            <div class="form-group">
+              <label for="input-failed-attempts" class="form-label">Failed Payment Attempts</label>
+              <input type="number" id="input-failed-attempts" class="form-input" value="3" min="0" max="10">
+            </div>
+
+            <div class="form-group col-span-2">
+              <label for="select-merchant-category" class="form-label">Merchant Category</label>
+              <select id="select-merchant-category" class="form-select">
+                <option value="E-commerce">E-commerce</option>
+                <option value="Travel">Travel</option>
+                <option value="Electronics" selected>Electronics</option>
+                <option value="Food">Food</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Digital Services">Digital Services</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-actions col-span-2">
+              <button id="btn-analyze-risk" type="button" class="btn-analyze">
+                <svg class="btn-spark" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.57l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.57l7-10a1 1 0 011.12-.384z"/>
+                </svg>
+                <span>Analyze Risk</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- RIGHT PANEL: RESULT DISPLAY -->
+        <div class="result-panel">
+          
+          <div id="risk-ready-card" class="result-ready-state">
+            <div class="ready-header-text">
+              <h3>Ready for Hybrid Analysis</h3>
+              <p>Enter transaction details and run the Hybrid AI engine.</p>
+            </div>
+
+            <div class="idle-visual-container">
+              <div class="idle-scan-beam"></div>
+              <div class="idle-ring idle-ring-1"></div>
+              <div class="idle-ring idle-ring-2"></div>
+              <div class="idle-ring idle-ring-3"></div>
+              <div class="idle-ring idle-ring-4"></div>
+              <div class="idle-center-dot"></div>
+              
+              <span class="idle-node-label label-device">DEVICE</span>
+              <span class="idle-node-label label-velocity">VELOCITY</span>
+              <span class="idle-node-label label-location">LOCATION</span>
+              <span class="idle-node-label label-ip">IP</span>
+            </div>
+          </div>
+
+          <!-- ACTIVE ANALYSIS RESULT CARD -->
+          <div id="risk-result-card" class="result-active-card" style="display: none;">
+            
+            <div class="res-header">
+              <div>
+                <span class="res-subtitle">EVALUATION COMPLETE</span>
+                <h3 id="res-txn-id" class="res-txn-id">RG-2026-000186</h3>
+              </div>
+              <div id="res-level-badge" class="res-level-badge critical">CRITICAL RISK</div>
+            </div>
+
+            <div id="res-decision-inputs" class="decision-inputs-box">
+              <div class="input-stat-item">
+                <span class="stat-label">RULE ENGINE</span>
+                <span id="res-rule-score-val" class="stat-val font-bold">82 / 100</span>
+              </div>
+              <div class="input-stat-divider">+</div>
+              <div class="input-stat-item">
+                <span class="stat-label">ML MODEL</span>
+                <span id="res-ml-prob-val" class="stat-val font-bold text-accent">91%</span>
+              </div>
+              <div class="input-stat-divider">=</div>
+              <div class="input-stat-item">
+                <span class="stat-label">HYBRID SCORE</span>
+                <span id="res-hybrid-score-val" class="stat-val font-bold text-bright">87 / 100</span>
+              </div>
+              <div style="margin-left: auto;">
+                <span id="res-mode-badge" class="mode-tag hybrid">HYBRID AI</span>
+              </div>
+            </div>
+
+            <div id="res-disagreement-banner" class="disagreement-banner" style="display: none;"></div>
+
+            <div class="res-score-row">
+              <div id="res-gauge-box" class="res-gauge-box high">
+                <svg class="res-score-ring" viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="42" stroke-width="8"/>
+                  <circle id="res-ring-fill" class="ring-fill" cx="50" cy="50" r="42" stroke-width="8" stroke-dasharray="264" stroke-dashoffset="34"/>
+                </svg>
+                <div class="res-score-text">
+                  <span id="res-score-number" class="res-score-num">87</span>
+                  <span class="res-score-denom">/ 100</span>
+                </div>
+              </div>
+
+              <div class="res-decision-info">
+                <span class="res-meta-label">AI Decision Output</span>
+                <div id="res-decision-val" class="res-decision-val high">STEP-UP VERIFICATION</div>
+                <div class="res-confidence">
+                  Confidence Rating: <strong id="res-confidence-val">95%</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="res-block">
+              <h4 class="block-title">Risk Signals Detected</h4>
+              <ul id="res-signals-list" class="res-signals-list"></ul>
+            </div>
+
+            <div class="res-block">
+              <h4 class="block-title">Why did RiskGuard flag this payment?</h4>
+              <div id="res-explanations-list" class="res-exp-box"></div>
+              
+              <div class="breakdown-table-wrapper">
+                <span class="breakdown-title">Score Contribution Breakdown</span>
+                <div id="res-breakdown-list" class="breakdown-list"></div>
+              </div>
+            </div>
+
+            <div class="res-block action-block">
+              <h4 class="block-title">Recommended Action</h4>
+              <p id="res-action-text" class="action-text">Require mandatory OTP / 2FA verification before settlement.</p>
+              <div id="res-safety-note" class="safety-note">
+                AI confidence is not sufficient for an irreversible action. Escalating to human review.
+              </div>
+            </div>
+
+            <!-- RAZORPAY TEST MODE PAYMENT ACTION BLOCK -->
+            <div id="res-payment-action-block" class="pz-action-card" style="display: none;">
+              <div class="pz-action-header">
+                <div class="pz-mode-tag">
+                  <span class="pz-tag-dot"></span>
+                  <span>RAZORPAY TEST MODE</span>
+                </div>
+                <span class="pz-demo-tag">BUILDATHON DEMO</span>
+              </div>
+
+              <p id="payment-demo-sub" class="pz-action-sub">Simulated payment — no real money is charged.</p>
+
+              <button id="btn-razorpay-checkout" type="button" class="btn-pz-checkout">
+                <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px;">
+                  <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.707 6.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span id="btn-razorpay-text">Proceed to Razorpay Test Checkout</span>
+              </button>
+
+              <div id="payment-error-msg" class="pz-error-note" style="display: none;"></div>
+
+              <!-- COMPACT PAYMENT VERIFICATION STATUS BOX -->
+              <div id="payment-verification-box" class="pz-verification-box" style="display: none;">
+                <h4 class="block-title">Payment Verification Status</h4>
+                <div class="pz-grid-2">
+                  <div><span class="res-meta-label">Razorpay Order</span><p id="pz-order-id" class="pz-val font-mono">—</p></div>
+                  <div><span class="res-meta-label">Payment ID</span><p id="pz-pay-id" class="pz-val font-mono">—</p></div>
+                  <div><span class="res-meta-label">Checkout Status</span><p id="pz-checkout-status" class="pz-val">Not Started</p></div>
+                  <div><span class="res-meta-label">HMAC Signature</span><p id="pz-sig-status" class="pz-val">Pending</p></div>
+                  <div><span class="res-meta-label">Risk Decision</span><p id="pz-risk-decision" class="pz-val">—</p></div>
+                  <div><span class="res-meta-label">Final Payment State</span><p id="pz-final-status" class="pz-val">ORDER_CREATED</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="false-positive-card" style="margin-top: 14px;">
+              <div class="fp-header">
+                <svg class="fp-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <span>False Positive Protection & Failure Handling</span>
+              </div>
+              <p class="fp-text">
+                RiskGuard avoids automatically declining borderline transactions. If model disagreement or network failure occurs, the deterministic safety engine acts as an immediate fallback.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 1: RISK OPERATIONS DASHBOARD & TRANSACTIONS HISTORY -->
+  <section id="transactions" class="dashboard-section">
+    <div class="dashboard-container">
+      
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">MERCHANT RISK OPERATIONS</span>
+        </div>
+        <h2 class="section-title">Risk Operations Dashboard</h2>
+        <p class="section-subtitle">
+          Monitor transaction risk, review AI decisions, and track Razorpay Test Checkout verification states.
+        </p>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">Transactions Analyzed</span>
+          <div id="kpi-count" class="kpi-value">0</div>
+          <span class="kpi-sub">Total session evaluations</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Test Payment Volume</span>
+          <div id="kpi-volume" class="kpi-value">₹0</div>
+          <span class="kpi-sub">Gross analyzed test value</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">High-Risk Transactions</span>
+          <div id="kpi-high-count" class="kpi-value">0</div>
+          <span id="kpi-high-pct" class="kpi-sub">0% of analyzed payments</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Payments Requiring Intervention</span>
+          <div id="kpi-intervention" class="kpi-value">0</div>
+          <span class="kpi-sub">Manual Review / Step-Up</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">High-Risk Value Flagged</span>
+          <div id="kpi-high-value" class="kpi-value">₹0</div>
+          <span class="kpi-sub">Payment Value Requiring Review</span>
+        </div>
+      </div>
+
+      <!-- SECONDARY METRICS ROW -->
+      <div class="secondary-metrics-bar">
+        <div class="metric-item">
+          <span class="metric-label">Approval Rate</span>
+          <span id="metric-approval-rate" class="metric-val">0%</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Manual Review Rate</span>
+          <span id="metric-manual-rate" class="metric-val">0%</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Step-Up Rate</span>
+          <span id="metric-stepup-rate" class="metric-val">0%</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Average Risk Score</span>
+          <span id="metric-avg-score" class="metric-val">0 / 100</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Analysis Coverage</span>
+          <span id="metric-hybrid-coverage" class="metric-val">100%</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Test Checkouts</span>
+          <span id="metric-pz-started" class="metric-val">0</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">Verified Payments</span>
+          <span id="metric-pz-verified" class="metric-val">0</span>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h4 class="chart-title">Risk Level Distribution</h4>
+          <div id="chart-risk-dist"></div>
+        </div>
+        <div class="chart-card">
+          <h4 class="chart-title">AI Decision Breakdown</h4>
+          <div id="chart-decision-dist"></div>
+        </div>
+        <div class="chart-card col-span-2">
+          <h4 class="chart-title">Recent Risk Score Trend</h4>
+          <div id="chart-risk-trend"></div>
+        </div>
+      </div>
+
+      <!-- TRANSACTION HISTORY TABLE CONTAINER -->
+      <div class="table-section-card">
+        <div class="table-header-controls">
+          <div>
+            <h3 class="table-title">Recent Transactions</h3>
+            <p class="table-desc">Real-time audit log of analyzed merchant payments</p>
+          </div>
+
+          <div class="table-actions">
+            <button id="btn-clear-demo" type="button" class="btn-clear-demo">Clear Demo Data</button>
+          </div>
+        </div>
+
+        <div class="filters-bar">
+          <div class="filter-group search-group">
+            <input type="text" id="filter-search" class="form-input" placeholder="Search Transaction ID...">
+          </div>
+
+          <div class="filter-group">
+            <select id="filter-level" class="form-select">
+              <option value="ALL">All Risk Levels</option>
+              <option value="LOW RISK">Low Risk</option>
+              <option value="MEDIUM RISK">Medium Risk</option>
+              <option value="HIGH RISK">High Risk</option>
+              <option value="CRITICAL RISK">Critical Risk</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <select id="filter-decision" class="form-select">
+              <option value="ALL">All Decisions</option>
+              <option value="APPROVE">Approve</option>
+              <option value="APPROVE WITH MONITORING">Approve with Monitoring</option>
+              <option value="MANUAL REVIEW">Manual Review</option>
+              <option value="STEP-UP VERIFICATION">Step-Up Verification</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <select id="filter-method" class="form-select">
+              <option value="ALL">All Payment Methods</option>
+              <option value="UPI">UPI</option>
+              <option value="Credit Card">Credit Card</option>
+              <option value="Debit Card">Debit Card</option>
+              <option value="Net Banking">Net Banking</option>
+              <option value="Wallet">Wallet</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <select id="filter-sort" class="form-select">
+              <option value="NEWEST">Newest First</option>
+              <option value="OLDEST">Oldest First</option>
+              <option value="HIGHEST_RISK">Highest Risk</option>
+              <option value="LOWEST_RISK">Lowest Risk</option>
+              <option value="HIGHEST_AMOUNT">Highest Amount</option>
+              <option value="LOWEST_AMOUNT">Lowest Amount</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="table-wrapper" class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Time</th>
+                <th>Amount</th>
+                <th>Payment Method</th>
+                <th>Risk Score</th>
+                <th>Risk Level</th>
+                <th>AI Decision</th>
+                <th>Analysis Mode</th>
+                <th>Payment Verification</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-txn-body">
+              <!-- Dynamically rendered -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="table-empty-state" class="table-empty-view" style="display: none;">
+          <p class="empty-title">No transactions analyzed yet.</p>
+          <p class="empty-desc">Run a transaction through the Risk Engine to populate the dashboard.</p>
+          <a href="#risk-engine" class="btn-primary-cta" style="margin-top: 14px; font-size: 0.85rem; padding: 10px 20px;">Analyze First Transaction</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: EXPLAINABILITY SECTION -->
+  <section id="explainability" class="explainability-section">
+    <div class="explainability-container">
+      
+      <div class="section-header">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">TRANSPARENT AI DECISIONS</span>
+        </div>
+        <h2 class="section-title">Every Decision, Explained.</h2>
+        <p class="section-subtitle">
+          RiskGuard shows the signals, score contributions, and recommended action behind every payment decision.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-num">01</span>
+          <h3 class="feature-title">Signal Attribution</h3>
+          <p class="feature-desc">See exactly which transaction signals increased or reduced payment risk.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">02</span>
+          <h3 class="feature-title">Decision Transparency</h3>
+          <p class="feature-desc">Understand how the final risk score maps to approval, monitoring, human review, or step-up verification.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-num">03</span>
+          <h3 class="feature-title">Human-in-the-Loop Safety</h3>
+          <p class="feature-desc">Borderline and uncertain transactions can be escalated instead of being automatically declined.</p>
+        </div>
+      </div>
+
+      <div class="latest-explain-wrapper">
+        <h3 class="block-title text-center" style="font-size: 1.2rem; margin-bottom: 18px;">Latest Decision Explanation</h3>
+        <div id="explainability-latest-card"></div>
+      </div>
+
+      <div class="recovery-panel-grid">
+        <div class="recovery-card">
+          <h4 class="card-heading">AI Failure Recovery & Safety Handling</h4>
+          <p class="card-text">
+            RiskGuard does not treat every high score as confirmed fraud. When transaction context is uncertain or backend network calls fail, the system falls back safely to deterministic rule execution without interrupting merchant checkout operations.
+          </p>
+        </div>
+
+        <div class="recovery-card fp-card">
+          <div class="fp-metric-box">
+            <span id="fp-escalated-count" class="fp-num">0</span>
+            <span class="fp-metric-title">Transactions Escalated Instead of Automatically Declined</span>
+          </div>
+          <p class="card-text text-muted" style="margin-top: 10px;">
+            These transactions were routed to an additional verification path rather than being automatically rejected.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRANSACTION DETAIL & DECISION AUDIT TRAIL MODAL -->
+  <div id="txn-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="res-subtitle">TRANSACTION AUDIT TRAIL</span>
+          <h3 id="modal-txn-id" class="res-txn-id">RG-2026-000186</h3>
+        </div>
+        <button id="modal-close-btn" type="button" class="btn-modal-close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <div class="modal-info-grid">
+          <div><span class="res-meta-label">Timestamp</span><p id="modal-time" class="modal-val">—</p></div>
+          <div><span class="res-meta-label">Amount</span><p id="modal-amount" class="modal-val font-bold">₹0</p></div>
+          <div><span class="res-meta-label">Payment Method</span><p id="modal-method" class="modal-val">—</p></div>
+          <div><span class="res-meta-label">Merchant Category</span><p id="modal-category" class="modal-val">—</p></div>
+        </div>
+
+        <div class="modal-score-banner">
+          <div><span class="res-meta-label">Risk Score</span><p id="modal-score" class="modal-val font-bold">0 / 100</p></div>
+          <div><span class="res-meta-label">Level</span><div id="modal-level" class="res-level-badge">LOW</div></div>
+          <div><span class="res-meta-label">Decision</span><p id="modal-decision" class="modal-val font-bold">—</p></div>
+          <div><span class="res-meta-label">Confidence</span><p id="modal-confidence" class="modal-val">—</p></div>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="block-title">Risk Signals Detected</h4>
+          <ul id="modal-signals" class="res-signals-list"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="block-title">Explainable Factor Breakdown</h4>
+          <div id="modal-explanations" class="res-exp-box"></div>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="block-title">Score Contribution Breakdown</h4>
+          <div class="breakdown-table-wrapper">
+            <div id="modal-breakdown" class="breakdown-list"></div>
+          </div>
+        </div>
+
+        <div class="modal-section action-block">
+          <h4 class="block-title">Recommended Action</h4>
+          <p id="modal-action" class="action-text">Approve Payment</p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="block-title">Decision & Payment Audit Trail</h4>
+          <div id="modal-audit-trail" class="audit-timeline"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CLEAR DEMO DATA CONFIRMATION MODAL -->
+  <div id="clear-confirm-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card small-modal">
+      <h3 class="modal-dialog-title">Clear Transaction History?</h3>
+      <p class="modal-dialog-text">Clear all locally stored RiskGuard transaction history? This will reset the dashboard to its empty state.</p>
+      <div class="modal-actions-row">
+        <button id="btn-cancel-clear" type="button" class="btn-secondary-cta" style="padding: 8px 16px; font-size: 0.82rem;">Cancel</button>
+        <button id="btn-confirm-clear" type="button" class="btn-primary-cta" style="padding: 8px 16px; font-size: 0.82rem;">Clear Data</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "model_name": "RiskGuard Fraud Classifier (Logistic Regression)",
+  "model_version": "1.0.0",
+  "dataset_type": "synthetic_demo",
+  "dataset_note": "Synthetic demonstration dataset for prototype validation.",
+  "training_rows": 20000,
+  "train_rows": 16000,
+  "test_rows": 4000,
+  "fraud_rate": 0.2515,
+  "features": [
+    "amount",
+    "payment_method",
+    "customer_type",
+    "device_status",
+    "velocity",
+    "location_behaviour",
+    "ip_reputation",
+    "previous_chargebacks",
+    "failed_attempts",
+    "merchant_category"
+  ],
+  "random_seed": 42,
+  "metrics": {
+    "accuracy": 0.8642,
+    "precision": 0.6752,
+    "recall": 0.8867,
+    "f1_score": 0.7667,
+    "roc_auc": 0.9484,
+    "confusion_matrix": {
+      "tn": 2565,
+      "fp": 429,
+      "fn": 114,
+      "tp": 892
+    }
+  }
+}
